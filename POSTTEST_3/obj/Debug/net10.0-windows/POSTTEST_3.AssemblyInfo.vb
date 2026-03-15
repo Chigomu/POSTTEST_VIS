@@ -13,12 +13,12 @@ Option Explicit On
 
 Imports System
 Imports System.Reflection
-<Assembly: System.Reflection.AssemblyCompanyAttribute("POSTTEST_2"),  _
+<Assembly: System.Reflection.AssemblyCompanyAttribute("POSTTEST_3"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
  Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f7da52253219188be4f73df3701e54894eddae2c"),  _
- Assembly: System.Reflection.AssemblyProductAttribute("POSTTEST_2"),  _
- Assembly: System.Reflection.AssemblyTitleAttribute("POSTTEST_2"),  _
+ Assembly: System.Reflection.AssemblyProductAttribute("POSTTEST_3"),  _
+ Assembly: System.Reflection.AssemblyTitleAttribute("POSTTEST_3"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _
  Assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0"),  _
  Assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")> 
