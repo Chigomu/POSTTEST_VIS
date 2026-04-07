@@ -318,6 +318,7 @@ Partial Class Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 17F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.Black
         ClientSize = New Size(618, 355)
         Controls.Add(btnCetak)
         Controls.Add(gbHobby)
@@ -335,6 +336,7 @@ Partial Class Form1
         Controls.Add(btnBrowse)
         Controls.Add(pbFoto)
         Font = New Font("VL Gothic", 9.749998F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        ForeColor = Color.White
         Name = "Form1"
         Text = "Form Cetak - 2409106033  - Febrian Pratama Saputra"
         CType(pbFoto, ComponentModel.ISupportInitialize).EndInit()
