@@ -1,0 +1,101 @@
+CREATE DATABASE IF NOT EXISTS db_bluearchive;
+USE db_bluearchive;
+
+DROP TABLE IF EXISTS murid;
+DROP TABLE IF EXISTS sekolah;
+
+CREATE TABLE sekolah (
+id INT AUTO_INCREMENT PRIMARY KEY,
+nama_lengkap VARCHAR(255) NOT NULL,
+distrik VARCHAR(255),
+moto TEXT
+);
+
+INSERT INTO sekolah (id, nama_lengkap, distrik, moto) VALUES
+(1, 'Sekolah Menengah Atas Abydos', 'Distrik Abydos', 'Dukungan finansial dan semangat pantang menyerah.'),
+(2, 'Akademi Gehenna', 'Distrik Gehenna', 'Kebebasan mutlak dalam kekacauan.'),
+(3, 'Sekolah Umum Trinity', 'Distrik Trinity', 'Harmoni, keanggunan, dan tradisi.'),
+(4, 'Sekolah Sains Millennium', 'Distrik Millennium', 'Logika, teknik, dan rasionalitas ilmu pengetahuan.'),
+(5, 'Akademi Hyakkiyako', 'Distrik Hyakkiyako', 'Pelestarian tradisi, festival, dan kemeriahan malam.'),
+(6, 'Akademi Shanhaijing', 'Distrik Shanhaijing', 'Warisan leluhur, perdagangan, dan pengobatan herbal.'),
+(7, 'Akademi Federal Red Winter', 'Distrik Red Winter', 'Sosialisme salju dan otoritas mutlak yang penuh gejolak.'),
+(8, 'Akademi Kepolisian Valkyrie', 'Distrik Valkyrie', 'Penegakan hukum, ketertiban, dan keamanan publik.'),
+(9, 'Akademi Khusus SRT', 'Distrik Valkyrie', 'Operasi khusus dan keadilan yang tak terlihat.'),
+(10, 'Sekolah Satelit Arius', 'Distrik Arius', 'Vanitas Vanitatum, Omnia Vanitas.'),
+(11, 'Akademi Wildhunt', 'Distrik Wildhunt', 'Pengejaran seni, sastra, dan keindahan murni.'),
+(12, 'Akademi Maritim Odyssey', 'Distrik Maritim', 'Eksplorasi samudra dan semangat petualangan.'),
+(13, 'Akademi Perkeretaapian Highlander', 'Tidak Ada', 'Bergerak sesuai jadwal, tanpa henti, tanpa pengecualian.');
+
+CREATE TABLE murid (
+id INT AUTO_INCREMENT PRIMARY KEY,
+nama_depan VARCHAR(100),
+nama_belakang VARCHAR(100),
+umur INT,
+id_sekolah INT,
+tahun_ajaran VARCHAR(50),
+jenis_kelamin VARCHAR(20),
+tgl_lahir VARCHAR(50),
+hobi TEXT,
+FOREIGN KEY (id_sekolah) REFERENCES sekolah(id) ON UPDATE CASCADE ON DELETE RESTRICT
+);
+
+INSERT INTO murid (nama_depan, nama_belakang, umur, id_sekolah, tahun_ajaran, jenis_kelamin, tgl_lahir, hobi) VALUES
+('Aru', 'Rikuhachima', 16, 2, 'Tahun Kedua', 'Perempuan', '12 Maret', 'Belajar manajeman bisnis, Membaca'),
+('Eimi', 'Izumimoto', 15, 4, 'Tahun Pertama', 'Perempuan', '01 Mei', 'Mendengarkan musik, Mengumpulkan aksesoris'),
+('Haruna', 'Kurodate', 17, 2, 'Tahun Ketiga', 'Perempuan', '01 Maret', 'Mencicipi makanan, Menilai restoran'),
+('Hifumi', 'Ajitani', 15, 3, 'Tahun Pertama', 'Perempuan', '27 November', 'Mengumpulkan barang Peroro, Berbelanja'),
+('Hina', 'Sorasaki', 17, 2, 'Tahun Ketiga', 'Perempuan', '19 Februari', 'Tidur, Bersantai'),
+('Hoshino', 'Takanashi', 17, 1, 'Tahun Ketiga', 'Perempuan', '02 Januari', 'Tidur siang, Menjaga sekolah'),
+('Iori', 'Shiromi', 16, 2, 'Tahun Kedua', 'Perempuan', '08 November', 'Patroli, Latihan menembak'),
+('Maki', 'Konuri', 15, 4, 'Tahun Pertama', 'Perempuan', '01 Agustus', 'Menggambar grafiti, Bermain game'),
+('Neru', 'Mikamo', 17, 4, 'Tahun Ketiga', 'Perempuan', '17 Agustus', 'Bermain game aksi, Mengoleksi jaket sukajan'),
+('Izumi', 'Shishidou', 16, 2, 'Tahun Kedua', 'Perempuan', '12 September', 'Makan, Mencoba kombinasi rasa aneh'),
+('Shiroko', 'Sunaookami', 16, 1, 'Tahun Kedua', 'Perempuan', '16 Mei', 'Bersepeda, Latihan fisik'),
+('Shun', 'Sunohara', 18, 6, 'Instruktur', 'Perempuan', '05 Februari', 'Merawat anak-anak, Bermain bersama anak kecil'),
+('Sumire', 'Otohana', 16, 4, 'Tahun Kedua', 'Perempuan', '20 Agustus', 'Senam, Berolahraga'),
+('Tsurugi', 'Kenzaki', 17, 3, 'Tahun Ketiga', 'Perempuan', '24 Juni', 'Menonton film romantis, Membaca novel'),
+('Akane', 'Muroya', 16, 4, 'Tahun Kedua', 'Perempuan', '01 April', 'Merawat senjata, Membersihkan ruangan'),
+('Chise', 'Waraku', 15, 5, 'Tahun Pertama', 'Perempuan', '13 Juli', 'Menulis haiku, Menatap langit'),
+('Akari', 'Wanibuchi', 17, 2, 'Tahun Ketiga', 'Perempuan', '09 Desember', 'Makan dalam porsi besar, Wisata kuliner'),
+('Hasumi', 'Hanekawa', 17, 3, 'Tahun Ketiga', 'Perempuan', '12 Desember', 'Berolahraga diet, Patroli keliling'),
+('Nonomi', 'Izayoi', 16, 1, 'Tahun Kedua', 'Perempuan', '01 September', 'Berbelanja, Merawat orang lain'),
+('Kayoko', 'Onikata', 18, 2, 'Tahun Ketiga', 'Perempuan', '17 Maret', 'Mengumpulkan musik rock, Merawat kucing jalanan'),
+('Mutsuki', 'Asagi', 16, 2, 'Tahun Kedua', 'Perempuan', '29 Juli', 'Mengumpulkan bom, Bermain trik jahil'),
+('Junko', 'Akashi', 15, 2, 'Tahun Pertama', 'Perempuan', '27 Desember', 'Makan enak, Wisata kuliner'),
+('Serika', 'Kuromi', 15, 1, 'Tahun Pertama', 'Perempuan', '25 Juni', 'Kerja paruh waktu, Menabung uang'),
+('Tsubaki', 'Kasuga', 16, 5, 'Tahun Kedua', 'Perempuan', '03 Februari', 'Tidur siang, Bersantai'),
+('Yuuka', 'Hayase', 16, 4, 'Tahun Kedua', 'Perempuan', '14 Maret', 'Mengerjakan matematika, Menghitung anggaran'),
+('Haruka', 'Igusa', 15, 2, 'Tahun Pertama', 'Perempuan', '13 Mei', 'Merawat gulma liar, Berkebun'),
+('Asuna', 'Ichinose', 17, 4, 'Tahun Ketiga', 'Perempuan', '24 Maret', 'Menyelinap, Menjalankan misi rahasia'),
+('Kotori', 'Toyomi', 15, 4, 'Tahun Pertama', 'Perempuan', '31 Desember', 'Menjelaskan ilmu pengetahuan, Belajar'),
+('Suzumi', 'Morizuki', 16, 3, 'Tahun Kedua', 'Perempuan', '31 Agustus', 'Patroli jalanan, Merakit bom cahaya'),
+('Pina', 'Asahina', 16, 5, 'Tahun Kedua', 'Perempuan', '09 November', 'Menonton film Yakuza, Berlatih akting'),
+('Hibiki', 'Nekozuka', 15, 4, 'Tahun Pertama', 'Perempuan', '02 April', 'Merakit mesin, Berbelanja suku cadang'),
+('Karin', 'Kakudate', 16, 4, 'Tahun Kedua', 'Perempuan', '02 September', 'Membersihkan asrama, Menghitung logistik'),
+('Saya', 'Yakushi', 16, 6, 'Tahun Kedua', 'Perempuan', '03 Januari', 'Bereksperimen kimia, Meracik obat-obatan'),
+('Airi', 'Kurimura', 15, 3, 'Tahun Pertama', 'Perempuan', '30 Januari', 'Makan es krim choco-mint, Berjalan-jalan'),
+('Fuuka', 'Aikiyo', 16, 2, 'Tahun Kedua', 'Perempuan', '30 April', 'Memasak makanan sehat, Mengurus kantin asrama'),
+('Hanae', 'Asagao', 15, 3, 'Tahun Pertama', 'Perempuan', '12 Mei', 'Merawat pasien, Menjahit perban'),
+('Hare', 'Omagari', 16, 4, 'Tahun Kedua', 'Perempuan', '09 April', 'Minum minuman berenergi, Meretas sistem'),
+('Utaha', 'Shiraishi', 17, 4, 'Tahun Ketiga', 'Perempuan', '13 Agustus', 'Membuat robot, Merakit drone'),
+('Ayane', 'Okusora', 15, 1, 'Tahun Pertama', 'Perempuan', '12 November', 'Membaca buku sejarah, Menghitung pengeluaran'),
+('Chinatsu', 'Hinomiya', 15, 2, 'Tahun Pertama', 'Perempuan', '22 Agustus', 'Merawat luka, Membaca buku medis'),
+('Kotama', 'Otoha', 15, 4, 'Tahun Pertama', 'Perempuan', '05 Januari', 'Mendengarkan siaran radio, Merekam suara lingkungan'),
+('Juri', 'Ushimaki', 15, 2, 'Tahun Pertama', 'Perempuan', '20 Oktober', 'Memasak eksperimental, Bersih-bersih dapur'),
+('Serina', 'Washimi', 16, 3, 'Tahun Kedua', 'Perempuan', '06 Januari', 'Mengamati kesehatan orang, Menolong pasien'),
+('Shimiko', 'Endo', 15, 3, 'Tahun Pertama', 'Perempuan', '30 November', 'Membaca buku sastra, Mengurus perpustakaan'),
+('Yoshimi', 'Ibaragi', 15, 3, 'Tahun Pertama', 'Perempuan', '03 Juli', 'Makan makanan manis, Mengobrol santai'),
+('Mashiro', 'Shizuyama', 15, 3, 'Tahun Pertama', 'Perempuan', '05 Juni', 'Latihan menembak jitu, Membaca manga'),
+('Izuna', 'Kuda', 15, 5, 'Tahun Pertama', 'Perempuan', '16 Desember', 'Berlatih ninjutsu, Membaca gulungan ninja'),
+('Shizuko', 'Kawawa', 16, 5, 'Tahun Kedua', 'Perempuan', '07 Juli', 'Mengurus kedai, Menghitung keuntungan bisnis'),
+('Aris', 'Tendou', 16, 4, 'Tahun Pertama', 'Perempuan', '25 Maret', 'Bermain RPG klasik, Bermain game bersama teman'),
+('Midori', 'Saiba', 15, 4, 'Tahun Pertama', 'Perempuan', '08 Desember', 'Menggambar ilustrasi, Bermain game multiplayer'),
+('Momoi', 'Saiba', 15, 4, 'Tahun Pertama', 'Perempuan', '08 Desember', 'Menulis skenario game, Bermain konsol jadul'),
+('Cherino', 'Renkawa', 16, 7, 'Tahun Ketiga', 'Perempuan', '27 Oktober', 'Memberi perintah, Menggambar kumis palsu'),
+('Nodoka', 'Amami', 16, 7, 'Tahun Kedua', 'Perempuan', '20 November', 'Mengamati bintang, Menggunakan teleskop'),
+('Yuzu', 'Hanaoka', 16, 4, 'Tahun Kedua', 'Perempuan', '12 Agustus', 'Bermain game speedrun, Bersembunyi di loker'),
+('Azusa', 'Shirasu', 16, 3, 'Tahun Kedua', 'Perempuan', '26 Desember', 'Merakit senjata, Mengoleksi mainan tengkorak'),
+('Hanako', 'Urawa', 16, 3, 'Tahun Kedua', 'Perempuan', '03 Januari', 'Menggoda orang lain, Mengobrol panjang'),
+('Koharu', 'Shimoe', 15, 3, 'Tahun Pertama', 'Perempuan', '16 April', 'Mengoleksi majalah dewasa, Menegakkan aturan keadilan'),
+('Kirino', 'Nakatsukasa', 15, 8, 'Tahun Pertama', 'Perempuan', '14 Oktober', 'Berlatih menembak sasaran, Membaca majalah polisi'),
+('Natsu', 'Yutori', 15, 3, 'Tahun Pertama', 'Perempuan', '04 Desember', 'Makan kue manis, Minum susu hangat');

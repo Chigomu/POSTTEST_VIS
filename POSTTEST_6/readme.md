@@ -1,0 +1,1 @@
+Jangan lupa untuk semua query di dalam DATABASE.SQL di run dulu sebelum di test. File telah diupdate untuk POSTTEST-6. Drop database jika sudah ada.
